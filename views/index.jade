@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div
+   h1 Select a beer
+   form(action="/get-EITB-songs" method="POST")
+    select
+     option IPA
+     option Pale Ale
+     option Pilsner
+     option Stout
+     option Porter
+
+    button(type="submit") Submit

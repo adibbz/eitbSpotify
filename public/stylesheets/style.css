@@ -1,8 +1,128 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	font: 14px "Roboto", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: #fdbc53;
 }
 
 a {
   color: #00B7FF;
 }
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+
+.wrapper h1 {
+	font-weight: 700;
+	font-size: 2.5em;
+	letter-spacing: 0.3rem;
+	text-transform: uppercase;
+}
+
+.wrapper form {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	font-family: "Roboto", sans-serif;
+}
+
+.wrapper form select {
+	width: 100%;
+	appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid #333333;
+	border-radius: 0;
+	background: transparent;
+	padding: 1rem 0.5rem;
+	font-size: 1rem;
+	font-weight: 300;
+	/* Select Arrow */
+	background-image:
+	linear-gradient(45deg, transparent 50%, gray 50%),
+	linear-gradient(135deg, gray 50%, transparent 50%),
+	linear-gradient(to right, #ccc, #ccc);
+	background-position:
+	calc(100% - 20px) calc(1em + 2px),
+	calc(100% - 15px) calc(1em + 2px),
+	calc(100% - 2.5em) 0.5em;
+	background-size:
+	5px 5px,
+	5px 5px,
+	1px 1.5em;
+	background-repeat: no-repeat;
+}
+
+.wrapper form button {
+	appearance: none;
+	-webkit-appearance: none;
+	margin-top: 25px;
+	width: 100%;
+	background: #333;
+	color: #fff;
+	font-weight: 300;
+	font-size: 1rem;
+	text-align: center;
+	padding: 1rem 0.5rem;
+	border: 0;
+	box-shadow: none;
+	text-transform: uppercase;
+}
+
+.wrapper .track {
+	box-shadow: 0 1px 9px 0 rgba(38,36,30,.09);
+}
+
+.wrapper .track img {
+	display: block;
+}
+
+.wrapper .track .info {
+	position: relative;
+	top: 0;
+	padding: 1rem;
+	background: #fff;
+	text-align: center;
+}
+
+.wrapper .track .info h3 {
+	margin-top: 0;
+}
+
+.wrapper .track .info .toggle {
+	display: inline-block;
+	background: #fdbc53;
+	color: #ffffff;
+	padding: 0.5rem 1rem;
+	margin-bottom: 15px;
+	font-weight: 700;
+	text-align: center;
+	width: 35%;
+}
+
+.wrapper .track .info .toggle:hover {
+	cursor: pointer;
+}
+
+.wrapper .track .info a {
+	color: #333333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

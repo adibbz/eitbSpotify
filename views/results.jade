@@ -1,0 +1,40 @@
+extends layout
+
+block content
+ div.track
+  img(src="#{albumArt}")
+  div.info
+   h3= name
+   div.preview
+    span.toggle Play Preview
+    audio.audio
+     source(src="#{preview}")
+   a(href="#{fullSong}" target="_blank") Listen to Full Song
+
+  script.
+   const preview = document.querySelector('.preview .toggle');
+   const audio = document.querySelector('.audio');
+
+   function toggleSound() {
+
+     if (!audio) {
+      return;
+     }
+
+     if(audio.paused) {
+       audio.play();
+       preview.innerHTML = "Pause Preview";
+     } else {
+       audio.pause();
+       preview.innerHTML = "Play Preview";
+     }
+   }
+
+   preview.addEventListener('click', toggleSound);
+   audio.addEventListener('ended', function() {
+    audio.currentTime = 0;
+    preview.innerHTML = "Play Preview";
+   })
+
+ //div
+  a(href="/") Select a different beer
