@@ -3,12 +3,24 @@ extends layout
 block content
   div
    h1 Select a beer
-   form(action="/get-EITB-songs" method="POST")
-    select
-     option IPA
-     option Pale Ale
-     option Pilsner
-     option Stout
-     option Porter
+   form(action="/get-EITB-songs" method="GET")
+    //select
+     option(value="" disabled selected) Choose a beer
+     option(value="IPA") IPA
+     option(value="Pale Ale") Pale Ale
+     option(value="Pilsner") Pilsner
+     option(value="Stout") Stout
+     option(value="Porter") Porter
+   
+    div.imd-select
+     a(href="#").imd-selector Choose a beer
+     ul.imd-select-list
+      li(name="beerType" value="IPA") IPA
+      input(type="hidden" name="beerType" value="IPA")
+      li(name="beerType" value="Pale Ale") Pale Ale
+      li(name="beerType" value="Pilsner") Pilsner
+      li(name="beerType" value="Stout") Stout
+      li(name="beerType" value="Porter") Porter
 
     button(type="submit") Submit
+

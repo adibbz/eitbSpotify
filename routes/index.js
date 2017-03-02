@@ -14,7 +14,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/get-EITB-songs', function (req, res, next) {
+router.get('/get-EITB-songs', function (req, res, next) {
+
+	var test = req.param('beerType');
 
 	spotifyApi.searchTracks('artist:Elephant in the Brew')
 	.then(function(data) {
@@ -23,6 +25,7 @@ router.post('/get-EITB-songs', function (req, res, next) {
 		// 	'Song': data.body
 		// });
 		res.render('results', {
+			test: test,
 			albumArt: data.body.tracks.items[randSong].album.images[1].url,
 			preview: data.body.tracks.items[randSong].preview_url,
 			name: data.body.tracks.items[randSong].name,
