@@ -1,41 +1,46 @@
 extends layout
 
 block content
- h1= test
- div.track
-  img(src="#{albumArt}")
-  div.info
-   h3= name
-   div.preview
-    span.toggle Play Preview
-    audio.audio
-     source(src="#{preview}")
-   a(href="#{fullSong}" target="_blank") Listen to Full Song
+ div.content
+  h1 Great track to pair with an #{choseBeerType}
 
-  script.
-   const preview = document.querySelector('.preview .toggle');
-   const audio = document.querySelector('.audio');
+  div.track
+   img(src="#{albumArt}")
+   div.info
+    h3= name
+    div.preview
+     span.toggle Play Preview
+     audio.audio
+      source(src="#{preview}")
+    a(href="#{fullSong}" target="_blank") Listen to Full Song
 
-   function toggleSound() {
+   script.
+    const preview = document.querySelector('.preview .toggle');
+    const audio = document.querySelector('.audio');
 
-     if (!audio) {
-      return;
-     }
+    function toggleSound() {
 
-     if(audio.paused) {
-       audio.play();
-       preview.innerHTML = "Pause Preview";
-     } else {
-       audio.pause();
-       preview.innerHTML = "Play Preview";
-     }
-   }
+      if (!audio) {
+       return;
+      }
 
-   preview.addEventListener('click', toggleSound);
-   audio.addEventListener('ended', function() {
-    audio.currentTime = 0;
-    preview.innerHTML = "Play Preview";
-   })
+      if(audio.paused) {
+        audio.play();
+        preview.innerHTML = "Pause Preview";
+      } else {
+        audio.pause();
+        preview.innerHTML = "Play Preview";
+      }
+    }
+
+    preview.addEventListener('click', toggleSound);
+    audio.addEventListener('ended', function() {
+     audio.currentTime = 0;
+     preview.innerHTML = "Play Preview";
+    })
+
+  a(href="/").pick Pick a different beer
+   i.fa.fa-fw.fa-undo
 
  //div
   a(href="/") Select a different beer

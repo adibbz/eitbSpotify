@@ -6,6 +6,12 @@
 // }
 
 // preview.addEventListener('click', playSound);
+/*-----------------------------------------------------------------
+|
+|   Custom Select Functionality
+|
+-----------------------------------------------------------------*/
+
 $(function() {
   
   var $imdSelect = $('.imd-select');
@@ -36,6 +42,9 @@ $(function() {
       // console.log($(this).text());
       $imdSelectListItem.removeClass('selected');
       $(this).addClass('selected');
+      
+      var dataValue = $(this).data('value');
+      $('input[name="beerType"]').val(dataValue);
       $imdSelector.text($(this).text())
     });
   });

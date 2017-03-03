@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div
+  div(style="width: 30%;")
    h1 Select a beer
    form(action="/get-EITB-songs" method="GET")
     //select
@@ -13,14 +13,16 @@ block content
      option(value="Porter") Porter
    
     div.imd-select
-     a(href="#").imd-selector Choose a beer
+     span.imd-selector Choose a beer
      ul.imd-select-list
-      li(name="beerType" value="IPA") IPA
-      input(type="hidden" name="beerType" value="IPA")
-      li(name="beerType" value="Pale Ale") Pale Ale
-      li(name="beerType" value="Pilsner") Pilsner
-      li(name="beerType" value="Stout") Stout
-      li(name="beerType" value="Porter") Porter
+      li(data-value="IPA") IPA
+      li(data-value="Pale Ale") Pale Ale
+      li(data-value="Pilsner") Pilsner
+      li(data-value="Sour") Sour
+      li(data-value="Stout") Stout
+      li(data-value="Porter") Porter
+      input(type="hidden" name="beerType" value="")
+
 
     button(type="submit") Submit
 
